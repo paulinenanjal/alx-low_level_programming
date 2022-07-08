@@ -37,7 +37,7 @@ while (tens >= 1)
 {
 dig = pos / tens;
 _putchar(dig + '0');
-pos = (pos - (tens * dig));
+pos = (pos - (tens *dig));
 tens /= 10;
 
 }

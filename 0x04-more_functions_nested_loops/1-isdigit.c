@@ -7,7 +7,6 @@
  **/
 
 int _isdigit(int c)
-%s/\s\+$//e
 int i;
 for (i = '0'; i <= '9'; i++)
 {
