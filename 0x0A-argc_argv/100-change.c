@@ -1,38 +1,46 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- *  * main - Entry point
- *   * @argc: number of params
- *    * @argv: array of params
- *     *
- *      * Return: SUCCESS ? 0 : 1
+ * * main -> this is a function to print its name
+ * * @argc: argc parameter
+ * * @argv: an array of a command listed
+ * * Return: 0 for success
  **/
-
 int main(int argc, char *argv[])
 {
-int _coins[5] = {25, 10, 5, 2, 1};
-int i, cents, coins = 0;
+int num, j, result = 0;
+int coins[] = {25, 10, 5, 2, 1};
 
 if (argc != 2)
-goto ERROR;
-
-cents = atoi(argv[1]);
-
-if (cents < 0)
-goto DONE;
-
-for (i = 0; i < 5; i++)
 {
-
-coins += cents / _coins[i];
-
-cents %= _coins[i];
+printf("%s\n", "Error");
+return (1);
 
 }
 
-DONE:	printf("%d\n", coins);
+num = atoi(argv[1]);
+if (num < 0)
+{
+printf("0\n");
+
 return (0);
 
-ERROR:	printf("Error\n");
-return (1);
+}
+for (j = 0; j < 5 && num >= 0; j++)
+{
+
+while (num >= coins[j])
+
+{
+
+num -= coins[j];
+
+result++;
+
+}
+
+}
+printf("%d\n", result);
+return (0);
 }
